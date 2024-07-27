@@ -1,0 +1,536 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding: 0;
+	margin: 0;
+	cursor:url(https://web.hycdn.cn/arknights/official/static/cursor-inner.1d69419cb78ed4579ad9.png) 3 3, default;
+}
+/*跟随的圆圈*/
+#pionter{ width: 36px; height: 36px; border-radius: 20px; border: 1px solid #FFFFFF;
+	position:absolute;transform:translate3d(-50%,-50%,0px);transition:background-color 0.3s, width 0.3s, height 0.3s; pointer-events: none;}
+
+/*背景*/
+@font-face {
+	font-family: "Geometos";
+	src: url(https://web.hycdn.cn/arknights/official/static/Geometos.7abc2b37d36f23537e8c.ttf);
+	src: url(https://web.hycdn.cn/arknights/official/static/Geometos.88697d914f4d8bdf4a6d.eot?#iefix) format("embedded-opentype"), url(https://web.hycdn.cn/arknights/official/static/Geometos.534acc83989298a8845d.woff) format("woff"), url(https://web.hycdn.cn/arknights/official/static/Geometos.7abc2b37d36f23537e8c.ttf) format("truetype"), url(https://web.hycdn.cn/arknights/official/static/Geometos.275cb00cc137a7780650.svg) format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+html,body{
+	height: 100%;
+	background-image: url("../src/pc-bg.jpg");
+	background-size: cover;
+	background-repeat:no-repeat;
+	background-position:right bottom;
+	background-attachment:fixed;
+	font-family:arapey;
+	overflow: hidden;
+}
+ol{list-style: none;}
+a{text-decoration: none;color:white;}
+
+/*上导航*/
+.tnaviga1{
+	position: fixed;
+	right: 0px;
+	top:0px;
+	height: 110px;
+	font-size:15px;
+	color: #c9cbd0;
+}
+#share{width: 30px;height: 30px;}
+#st:hover line{fill: #22bbff;stroke:#22bbff;}
+#st:hover circle{fill: #22bbff;stroke:#22bbff;}
+.tnaviga1 div{
+	display: inline-block;
+	float: right;
+	line-height: 85px;
+}
+#st{
+	padding-left:60px;
+	padding-top:20px;
+	padding-right: 80px;
+}
+#dt{padding:9px 10px;}
+#dt span{padding: 0 10px; font-size: 17px;}
+
+/*svg*/
+.picsvg{
+	position: absolute;
+}
+svg{
+	pointer-events:none;
+}
+/*内容*/
+.boxx{
+	display: block;
+	height: 100%;
+	color: white;
+	position: relative;
+	transform: translateY(0);
+	transition: all 0.3s ease;
+}
+/*翻页*/
+.ll{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top:0;
+	justify-content: center;
+	transition: all 0.3s ease;
+}
+/*第一页*/
+.l1{
+	position: relative;
+	height: 100%;
+	padding-left: 72px;
+	overflow: hidden;
+}
+/*背景图阿米娅*/
+.l1::before{
+	content:"";
+	display: block;
+	position: absolute;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-image: url("../src/amiya_bg.png");
+	background-repeat: no-repeat;
+	background-position: 0 center;
+	background-size: auto 100%;
+	opacity: 0.1;
+	visibility: visible;
+}
+/*标题图*/
+.titleimg{
+	min-width: 123.2px;
+	width: 10%;
+	position: absolute;
+	top:6%;
+	left: 72px;
+}
+/*中间*/
+.hometi{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+/*九宫格*/
+.nineti{
+	height: 20%;
+	padding-bottom: 20px;
+}
+.nineti ul{
+	color:#FFFFFF;
+	font-size: 10px;
+	list-style: none;
+	padding: 0px;
+	font-weight: bold;
+}
+.l1 li{
+	display:inline-block;
+	padding: 20px;
+}
+/*标题 R*/
+.titlename{
+	font-size:100px;
+	color:#FFFFFF;
+	/*font-weight: bold;*/
+	word-break:keep-all;      
+    white-space:nowrap;
+	font-family: fantasy;
+	letter-spacing:1px;
+}
+/*视频*/
+.vidioti{
+	height: 20%;
+	font-size: 12px;
+	font-family:"Roman SemiB";
+}
+.vidioti ul{
+	color:#FFFFFF;
+	font-size: 12px;
+	list-style: none;
+	padding: 0px;
+	font-weight: bold;
+}
+
+/*第二页*/
+.l2{
+	position: relative;
+	height: 100%;
+	transform-origin: left;
+	padding: 52px 0;
+	padding-left: 72px;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	width: 60%;
+	max-width:868px;
+	min-width:682.4px;
+}
+.listltwo{
+	display: flex;
+	justify-content: flex-end;
+}
+.listltwo li{
+	display:inline;
+	padding: 0 20px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.listltwo .active a{
+	color: #22bbff;
+}
+.piclt{
+	position: relative;
+	padding-top: 2%;
+	height: 196.8px;
+	width: 760.8px;
+	min-height: 196.8px;
+	overflow: hidden;
+}
+.piclt ol{
+	width:3804px;
+	height: 100%;
+	display: flex;
+	white-space: nowrap;
+	transform:translateX(0px);
+	transition-duration: 300ms;
+}
+.piclt img{
+	width: 100%;
+	height: 100%;
+}
+.ltsquare{
+	display: flex;
+	justify-content: flex-end;
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+}
+.ltsquare span{
+	display: inline-block;
+	width: 40px;
+	height: 2px;
+	margin: 5px;
+	background-color: white;
+}
+.ltsquare span.active{
+	background-color: #22bbff;
+}
+.news{
+	display: flex;
+	flex:auto;
+	flex-wrap: wrap;
+	padding-top: 1%;
+	transform:translateX(-72px);
+	width: 850px;
+	height: 0px;
+	padding-bottom: 30px;
+}
+.news li{
+	flex:auto;
+	padding-left: 72px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	border-image: linear-gradient(to right, #464646 0%, #464646 60%, rgba(70, 70, 70, 0) 100%) 30 stretch;
+	border-bottom: 1px solid;
+}
+.news li::before{
+	content: "READ MORE +";
+	display: inline-block;
+	font-weight: bold;
+	font-size: 0.675rem;
+	text-align: right;
+	color: #000;
+	font-family: "Bender";
+	background-color: #22bbff;
+	margin-right: 0;
+	padding: 5px 0px;
+	transition: width 0.5s, margin-right 0.3s, padding 0.3s;
+	white-space: nowrap;
+	width: 0;
+	box-sizing: content-box;
+	overflow: hidden;
+}
+.news li:hover::before{
+	width: 11em;
+	margin-right: 2em;
+	padding: 5px 7px;
+
+}
+.bluelt{color: #22bbff;padding: 0 10px;}
+.news div{
+	display: inline-block;
+}
+/*第三页*/
+.l3{
+	position: relative;
+	height: 100%;
+	padding: 0 6%;
+	overflow: hidden;
+}
+.lre{
+	height: 80%;
+	position: relative;
+	display: inline-block;
+	left: 0;
+	top: 10%;
+}
+.staffItem{
+	display: flex;
+	line-height: 42px;
+	color: white;
+	fill: white;
+	transform-origin: 0 50%;
+}
+.staffItem span{padding-right: 10px;white-space:nowrap;}
+.staffItemCareer{width: 42px;}
+.staffItemIdx{font-size: 10px;}
+.staffItemName{font-size: 25px;}
+.staffItem.active{
+	color: #22bbff;
+	fill: #22bbff;
+	transform: scale(1.25);
+}
+.intpic{
+	height: 130%;
+	position: absolute;
+	top: -13%;
+	left: 20%;
+	width: 60%;
+	background-image: url("../src/Amiya.png");
+	background-repeat: no-repeat;
+	background-position: 0 center;
+	background-size: auto 100%;
+	pointer-events: none;
+}
+.inttext{
+	height: 35%;
+	width: 60%;
+	position: absolute;
+	bottom: 20%;
+	right: 0;
+}
+.inttextud li{position: absolute;right: 0;}
+#up{width: 80%;height: 100%;top: 0;	border-image: linear-gradient(to bottom, #ffffff00 0%, #a5a5a5 60%, rgb(255 255 255 / 0%) 100%) 30 stretch;border-left: 1px solid; }
+#down{width: 100%;height: 55%;bottom: 0;border-image: linear-gradient(to right, #69696961 0%, #909090 55%, rgba(70, 70, 70, 0) 100%) 30 stretch;border-top: 1px solid;}
+#cname{position:absolute;top: 4%;left: 3%;font-size: 60px; }
+#ename{position:absolute;display:inline-block;left:3%;top: 32%; }
+#cvname{position:absolute;display: inline-block;right:8%;top: 32%;}
+#itext{position: absolute;width: 74%;right: 3%;top:12%;}
+/*第四页*/
+.l4{
+	position: relative;
+	height: 100%;
+	transform-origin: left;
+}
+.introduce{
+	position: absolute;
+	display: inline-block;
+	top: 5%;
+	color: #999999;
+	width: 650px;
+	height: 100%;
+	font-size: 30px;
+	white-space: nowrap;
+}
+.storyItem{display: flex;height:15%;align-items:center;justify-content:flex-end;align-items: center;border-image: linear-gradient(to right, #838383 0%, #a1a1a1a8 70%, rgb(0 0 0 / 0%) 100%) 30 stretch;border-bottom: 1px solid;}
+.storyItem a{display: flex;height:100%;justify-content:flex-end;align-items: center;}
+.storyItem:last-child{border-bottom:none;}
+.storyItem:hover .storyItemNameBack{opacity: 1;}
+.storyItem span{padding-left: 5%}
+.storyItemName{font-family: cursive; font-weight: bold;}
+.storyItemNameEn{font-family: "Geometos";}
+.storyItemNameBack {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	font-family: "Geometos";
+	fill: none;
+	font-size: 88px;
+	stroke: rgba(255, 255, 255, 0.1);
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+.lfotext{
+	height: 80%;
+	width: 40%;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+}
+#lfopic{
+	position: absolute;
+	top: 1%;
+	left: 53%;
+	width: 500px;
+	height: 500px;
+	background-image: url('https://web.hycdn.cn/arknights/official/static/originiums.a3d9f6533545b6423c8d.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 150%;
+}
+.lfoinfo li{position: absolute;right: 0;}
+#up2{width: 90%;height: 100%;top: 0;border-left: 2px dashed rgba(255,255,255,0.8); }
+#down2{width: 100%;height: 35%;bottom: 0;border-top: 2px dashed rgba(255,255,255,0.8);}
+#stcname{position:absolute;top: 45%;left: 3%;font-size: 60px; }
+#stename{position:absolute;left:3%;top: 56%;font-size: 30px; }
+#stintro{position: absolute;width: 85%;right: 3%;top:12%;}
+
+.l5{
+	position: relative;
+	height: 100%;
+	transform-origin:center;
+}
+.lfive{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.lrbox{
+	display: inline-block;
+	width:340px;
+	height: 70%;
+	margin: 90px;
+	border-image: linear-gradient(to bottom, #d5d5d500 0%, #ffffff 50%, #a9a9a959 100%) 30 stretch;
+	border-left: 1px solid;
+}
+.lrname{
+	display: inline-block;
+	width: 100%;
+	padding: 5%;
+	border-image: linear-gradient(to right, white 0%, #ffffff 50%, #a9a9a959 100%) 30 stretch;
+	border-top: 1px solid;
+	white-space: nowrap;
+}
+.fcname{
+	display: block;
+	font-size: 35px;
+	padding: 0;
+}
+.fename{
+	display: block;
+	font-size: 17px;
+	color: #c0c0c0;
+	padding: 0;
+	padding-bottom: 3%;
+}
+.lrbox img{width:95%;padding: 5%;}
+.lrchick{
+	border: 1px solid #c9c9c9;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 85%;
+	height: 50px;
+}
+.lrchick:hover{
+	background-color: #22bbff;
+	color: #141516;
+}
+/*右导航*/
+.rnavigal{
+	position:fixed;
+	right: 10px;
+	height: 100%;
+	width: 185px;
+	transition: all 0.3s ease;
+}
+.numb{
+	position: absolute;
+	right: 40%;
+	bottom: 7%;
+	color: #999999;
+	font-family: Bender;
+	letter-spacing: 7px;
+}
+.numb div{
+	position: relative;
+	display: inline;
+	padding-left: 10px;
+}
+
+.rnavigal ul{
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+}
+.rnavigal ul li{
+	display: list-item;
+	line-height:104.6px;
+	list-style: none;
+	text-align: center;
+		
+}
+.rnavigals{transition: all 0.1s ease;}
+
+.rnavigals:hover{
+	padding-right: 13px;
+	border-right: 5px solid rgb(34, 187, 255);
+}
+.rnavigal .active .rnavigals a{color:rgb(34, 187, 255);}
+
+.fot{
+	position: relative;
+	padding-top: 8px;
+	display: block;
+	border-top: 1px solid #535353;
+	background-color: #141516;
+	text-align: center;
+	color:#999;
+	width: 100%;
+	height: 100%;
+	transform: translateY(0);
+	transition: all 0.3s ease;
+}
+.fot table{
+	margin:auto;
+	font-size: 13px;
+	padding-bottom: 10px;
+}
+	
+.fot p{
+	display: inline-block;
+	font-size: 14px;
+	padding: 18px;
+	color: white;
+}
+
+.fd{
+	width: 100%;
+	height: 100%;
+	border-top: 1px solid #535353;
+	list-style: none;
+	padding: 0px;
+	text-align: center;
+	display: block;
+	background-color: #141516;
+	color:#999;
+	font-size: 13px;
+	padding-top: 13px;
+	position: relative;
+}
+#small{
+	font-size: 10px;
+}
+.fi{
+	float: left;
+	position: absolute;
+	left: 0;
+	top:10%;
+	height: 6em;
+}
+.fi img{
+	height: 100%;
+	width: auto;
+}
